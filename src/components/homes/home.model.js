@@ -13,6 +13,10 @@ export default class HomeModel {
     this.lat = data.Lat;
     this.lng = data.Lng;
     this.address = data.Addr;
-    this.opts = { ...data };
+    this.name = data.PlanName;
+    this.image = data.Thumb1 || data.Thumb2;
+    this.bedRooms = data.Br;
+    this.bathRooms = data.Ba;
+    this.opts = {...data};
   }
 }

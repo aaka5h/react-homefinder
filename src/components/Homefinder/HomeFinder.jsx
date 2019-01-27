@@ -24,10 +24,10 @@ class HomeFinder extends Component {
 
   search = (event) => {
     event.preventDefault();
-    this.setState({searching: true});
+    this.setState({ searching: true });
     this.loadHomes()
       .then(() => {
-        this.setState({searching: false});
+        this.setState({ searching: false });
       });
   };
 
@@ -35,7 +35,7 @@ class HomeFinder extends Component {
    * Loads homes with current filter state
    * @returns Promise
    */
-  loadHomes = () => findHomes({page: this.state.pagesLoaded + 1})
+  loadHomes = () => findHomes({ page: this.state.pagesLoaded + 1 })
     .then((newHomes) => {
       console.log(newHomes);
       const currentHomes = [...this.state.homes];

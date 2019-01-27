@@ -1,0 +1,6 @@
+.home-image{
+  display: block;
+}
+.home-image > img{
+  width: 100%;
+}

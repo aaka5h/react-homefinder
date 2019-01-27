@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Home from '../../homes/Home/Home';
+import Home from '../../homes/HomeCard/Home';
 import classes from './HomeList.module.css';
 
 const homeList = (props) => {

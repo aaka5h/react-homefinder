@@ -1,5 +1,27 @@
-.home-list{
-  display: flex;
-  flex-wrap: wrap;
+.home-list {
+  display: grid;
+  grid-template-columns: 100%;
   justify-content: center;
+  justify-items: center;
 }
+
+@media (min-width: 567px) {
+  .home-list {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+@media (min-width: 768px) {
+  .home-list {
+    grid-template-columns: repeat(4, 25%);
+  }
+}
+
+@media (min-width: 1200px) {
+.home-list{
+  margin: 0 auto;
+  grid-template-columns: repeat(5, 20%);
+  max-width: 1500px;
+}
+}
+

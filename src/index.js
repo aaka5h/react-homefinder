@@ -19,7 +19,7 @@ ReactDOM.render(
   // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={store}>
     <BrowserRouter>
-      <App/>
+      <App />
     </BrowserRouter>
   </Provider>,
   // eslint-disable-next-line no-undef

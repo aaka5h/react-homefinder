@@ -2,6 +2,7 @@
   "name": "reactjs-nhs",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://od-api.newhomesource.com/api/v2",
   "dependencies": {
     "axios": "^0.18.0",
     "prop-types": "^15.6.2",
@@ -13,6 +14,7 @@
     "redux": "^4.0.1"
   },
   "scripts": {
+    "lint": "eslint src/*.js src/*.jsx",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
