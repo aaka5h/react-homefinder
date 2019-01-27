@@ -17,6 +17,7 @@ export default class HomeModel {
     this.image = data.Thumb1 || data.Thumb2;
     this.bedRooms = data.Br;
     this.bathRooms = data.Ba;
-    this.opts = {...data};
+    this.price = data.Price;
+    this.opts = { ...data };
   }
 }

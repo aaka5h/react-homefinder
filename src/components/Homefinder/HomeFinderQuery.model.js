@@ -1,9 +1,12 @@
+import ApiQuery from './ApiQuery.model';
+
 class HomeFinderQuery {
-  bed;
+  prLow;
 
-  bath;
+  prHigh;
 
-  minPrice;
+  constructor(type, query) {
 
-  maxPrice;
+  }
 }
+

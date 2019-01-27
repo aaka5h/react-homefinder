@@ -7,7 +7,7 @@ class HomeDetail extends Component {
   };
 
   componentDidMount() {
-    console.log('[DidMount] home detail');
+    console.log('[DidMount] homeCard detail');
     console.log(this.props);
     getHomeDetails({planid: this.props.match.params.id}).then((data) => {
       this.setState({home: data});

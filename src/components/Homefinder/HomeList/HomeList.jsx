@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Home from '../../homes/HomeCard/Home';
+import HomeCard from '../../homes/HomeCard/HomeCard';
 import classes from './HomeList.module.css';
 
 const homeList = (props) => {
   const homesArr = [];
   for (const home of props.homes) {
-    homesArr.push(<Home key={home.id} {...home} />);
+    homesArr.push(<HomeCard key={home.id} {...home} />);
   }
 
   return (
@@ -14,6 +14,7 @@ const homeList = (props) => {
       <div className={classes['home-list']}>
         {homesArr}
       </div>
+      <button onClick={props.loadMore}>loadMore</button>
       {props.loading ? <div>Loading</div> : null}
     </>
   );

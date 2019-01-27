@@ -1,67 +1,131 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import SearchBox from './SearchBox/SearchBox';
 import HomeList from './HomeList/HomeList';
-import { findHomes } from './HomeFinder.service';
+import { fetchMoreHomes, searchHomes, loadFacets } from '../../actions/HomeFinder/index';
+import FacetsAdapter from './SearchBox/facet.model.adapter';
+import HomeFinderQueryFactory from './HomeFinderQuery.factory';
+import Query from './Query.model';
 
 class HomeFinder extends Component {
+  facetsLoaded = false;
+
   state = {
     form: {
       minPrice: {
+        label: 'Minimum Price',
+        type: 'select',
+        touched: false,
         value: null,
+        valid: false,
+        config: { options: [{ value: '', label: 'Select' }] },
+      },
+      maxPrice: {
+        label: 'Maximum Price',
+        type: 'select',
+        touched: false,
+        value: null,
+        valid: false,
+        config: { options: [{ value: '', label: 'Select' }] },
+      },
+      bedrooms: {
+        label: 'Beds',
+        type: 'select',
+        touched: false,
+        value: null,
+        valid: false,
+        config: { options: [{ value: '', label: 'Select' }] },
+      },
+      bathrooms: {
+        label: 'Baths',
+        type: 'select',
+        touched: false,
+        value: null,
+        valid: false,
+        config: { options: [{ value: '', label: 'Select' }] },
+      },
+      stories: {
+        label: 'Stories',
+        type: 'select',
+        touched: false,
+        value: null,
+        valid: false,
+        config: { options: [{ value: '', label: 'Select' }] },
       },
     },
-    homes: [],
-    pagesLoaded: 0,
-    pageSize: 10,
-    searching: false,
-    loadingMore: false,
   };
 
   componentDidMount() {
-    this.loadHomes();
+    this.props.loadFacets();
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // this.setFormOptions();
+    if (this.props.facetsLoaded && !this.facetsLoaded) {
+      this.setFormOptions();
+      this.facetsLoaded = true;
+    }
+  }
+
+  setFormOptions() {
+    if (this.loadedOnce) return;
+    const searchBoxAdapter = this.props.facets;
+    const PriceOptions = searchBoxAdapter.buildPriceOptions();
+
+    const { form } = this.state;
+    const newOpts = form.minPrice.config.options.concat(PriceOptions);
+    form.minPrice.config.options = newOpts;
+    form.maxPrice.config.options = newOpts;
+    this.setState({ form });
   }
 
   search = (event) => {
     event.preventDefault();
-    this.setState({ searching: true });
-    this.loadHomes()
-      .then(() => {
-        this.setState({ searching: false });
-      });
+    const query = this.createQuery();
+    // TODO: if(search Params changed)
+    this.props.search(HomeFinderQueryFactory('api', query));
   };
 
-  /**
-   * Loads homes with current filter state
-   * @returns Promise
-   */
-  loadHomes = () => findHomes({ page: this.state.pagesLoaded + 1 })
-    .then((newHomes) => {
-      console.log(newHomes);
-      const currentHomes = [...this.state.homes];
-      const curr = currentHomes.concat(newHomes);
-      this.setState(prevState => ({
-        homes: curr,
-        pagesLoaded: prevState.pagesLoaded + 1,
-      }));
-      return Promise.resolve();
+  createQuery = () => {
+    const query = new Query();
+    const { form } = this.state;
+    Object.keys(form).forEach((key) => {
+      query[key] = form[key].value;
     });
+    return query;
+  };
 
+  valueChanged = (event, inputName) => {
+    const value = event.target.value;
+    console.log(value, event, inputName);
 
-  loadPage = () => null;
+    const { form } = this.state;
+    const formItem = { ...form[inputName] };
+    formItem.value = value;
+    form[inputName] = formItem;
+    this.setState({ form });
+  };
 
   scrollFinished = () => {
 
   };
 
+  loadMore = () => {
+    const quert = this.createQuery();
+    quert.page = this.props.page + 1;
+    this.props.loadHomes(quert);
+  };
+
   render() {
     return (
       <>
-        <SearchBox search={this.search} formValues={this.state.form} />
+        <SearchBox search={this.search} valueChanged={this.valueChanged} form={this.state.form} />
         <HomeList
-          searching={this.state.searching}
-          loading={this.state.loadingMore}
-          homes={this.state.homes}
+          loadMore={this.loadMore}
+          searching={this.props.searching}
+          loading={this.props.loadingMore}
+          homes={this.props.homes}
           scrolled={this.scrollFinished}
         />
       </>
@@ -69,5 +133,19 @@ class HomeFinder extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  homes: state.homeFinder.homes,
+  page: state.homeFinder.pagesLoaded,
+  searching: state.homeFinder.searching,
+  loading: state.homeFinder.loadingMore,
+  facets: new FacetsAdapter(state.homeFinder.facets),
+  facetsLoaded: state.homeFinder.facetsLoaded,
+});
 
-export default HomeFinder;
+const mapDispatchToProps = dispatch => ({
+  loadHomes: q => dispatch(fetchMoreHomes(q)),
+  search: q => dispatch(searchHomes(q)),
+  loadFacets: () => dispatch(loadFacets()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeFinder);

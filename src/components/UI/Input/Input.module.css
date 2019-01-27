@@ -1,0 +1,9 @@
+.input-wrapper{
+  display: flex;
+  flex-flow: column wrap;
+  margin: 0.5rem;
+}
+.select-wrapper select{
+  min-width: 10rem;
+  width: 100px;
+}
