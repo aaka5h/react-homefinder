@@ -58,6 +58,7 @@ class HomeFinder extends Component {
 
   componentDidMount() {
     this.props.loadFacets();
+    this.loadMore();
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -112,20 +113,22 @@ class HomeFinder extends Component {
   };
 
   loadMore = () => {
-    const quert = this.createQuery();
-    quert.page = this.props.page + 1;
-    this.props.loadHomes(quert);
+    const query = this.createQuery();
+    query.page = this.props.page + 1;
+    this.props.loadHomes(query);
   };
 
   render() {
+    const { searching, loadingMore, homes } = this.props;
+    const { form } = this.state;
     return (
       <>
-        <SearchBox search={this.search} valueChanged={this.valueChanged} form={this.state.form} />
+        <SearchBox search={this.search} valueChanged={this.valueChanged} form={form} />
         <HomeList
           loadMore={this.loadMore}
-          searching={this.props.searching}
-          loading={this.props.loadingMore}
-          homes={this.props.homes}
+          searching={searching}
+          loading={loadingMore}
+          homes={homes}
           scrolled={this.scrollFinished}
         />
       </>
