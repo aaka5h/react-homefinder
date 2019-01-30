@@ -1,7 +1,9 @@
 import Axios from 'axios';
 import HomeModel from '../../components/homes/home.model';
 
-import { LOAD_MORE_HOMES, REFRESH_SEARCH, UPDATE_FACETS } from './action-names';
+import {
+  LOAD_MORE_HOMES, LOADING_MORE_HOMES, REFRESH_SEARCH, UPDATE_FACETS,
+} from './action-names';
 import { convertToQuery } from '../../utils/requests/axios.get';
 
 const PARTNER_ID = process.env.REACT_APP_PARTNER_ID;
@@ -11,10 +13,10 @@ const axios = Axios.create({
 });
 
 axios.interceptors.response.use((response) => {
-    console.log('response:', response);
-    return response;
-  },
-  error => Promise.reject(error));
+  console.log('response:', response);
+  return response;
+},
+error => Promise.reject(error));
 
 const loadMoreHomes = homes => ({
   type: LOAD_MORE_HOMES,
@@ -27,8 +29,13 @@ export const updateFacets = facets => ({
 });
 
 
+const loadingMoreHomes = () => ({
+  type: LOADING_MORE_HOMES,
+});
+
 export const fetchMoreHomes = queryObject => (dispatch) => {
-  axios.get(
+  dispatch(loadingMoreHomes());
+  return axios.get(
     `/search/homes?${convertToQuery({
       ...queryObject,
       partnerid: PARTNER_ID,
@@ -41,6 +48,7 @@ export const fetchMoreHomes = queryObject => (dispatch) => {
         homes.push(new HomeModel(home));
       });
       dispatch(loadMoreHomes(homes));
+      return Promise.resolve({ data: 'hello world' });
     })
     .catch(error => Promise.reject(error));
 };

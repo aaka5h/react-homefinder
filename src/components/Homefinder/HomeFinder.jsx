@@ -7,6 +7,7 @@ import { fetchMoreHomes, searchHomes, loadFacets } from '../../actions/HomeFinde
 import FacetsAdapter from './SearchBox/facet.model.adapter';
 import HomeFinderQueryFactory from './HomeFinderQuery.factory';
 import Query from './Query.model';
+import skeletonProvider from '../hoc/skeleton/skeletonProvider/skeletonProvider';
 
 class HomeFinder extends Component {
   facetsLoaded = false;
@@ -55,6 +56,11 @@ class HomeFinder extends Component {
       },
     },
   };
+
+  constructor(props) {
+    super(props);
+    this.listRef = React.createRef();
+  }
 
   componentDidMount() {
     this.props.loadFacets();
@@ -115,7 +121,9 @@ class HomeFinder extends Component {
   loadMore = () => {
     const query = this.createQuery();
     query.page = this.props.page + 1;
-    this.props.loadHomes(query);
+    this.props.loadHomes(query).then((data) => {
+      console.log('action finished:', data);
+    });
   };
 
   render() {
@@ -125,6 +133,7 @@ class HomeFinder extends Component {
       <>
         <SearchBox search={this.search} valueChanged={this.valueChanged} form={form} />
         <HomeList
+          listRef={this.listRef}
           loadMore={this.loadMore}
           searching={searching}
           loading={loadingMore}
@@ -151,4 +160,9 @@ const mapDispatchToProps = dispatch => ({
   loadFacets: () => dispatch(loadFacets()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeFinder);
+
+const test = props => props.loading;
+
+const skeleton = skeletonProvider(null, test, null)(HomeFinder);
+
+export default connect(mapStateToProps, mapDispatchToProps)(skeleton);

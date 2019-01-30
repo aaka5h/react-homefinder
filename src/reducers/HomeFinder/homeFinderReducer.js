@@ -1,4 +1,9 @@
-import { LOAD_MORE_HOMES, REFRESH_SEARCH, UPDATE_FACETS } from '../../actions/HomeFinder/index';
+import {
+  LOAD_MORE_HOMES,
+  REFRESH_SEARCH,
+  UPDATE_FACETS,
+  LOADING_MORE_HOMES,
+} from '../../actions/HomeFinder/index';
 import FacetsModel from '../../components/Homefinder/SearchBox/factets.model';
 
 
@@ -41,10 +46,16 @@ const homeFinderReducer = (state = defaultState, action) => {
       return {
         ...state,
         pagesLoaded: state.pagesLoaded + 1,
+        loadingMore: false,
         homes: homes,
       };
     case UPDATE_FACETS:
       return updateFacetsState(state, action);
+    case LOADING_MORE_HOMES:
+      return {
+        ...state,
+        loadingMore: true,
+      };
     default:
       return state;
   }
