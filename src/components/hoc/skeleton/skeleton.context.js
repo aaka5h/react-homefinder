@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 //
 // const contextTypes = {
@@ -13,11 +13,11 @@ import PropTypes from 'prop-types';
 //   }),
 // };
 
-const SkeletonContext = React.createContext({
+const context = React.createContext({
   skeletor: {
     isPending: false,
-    styling:{},
+    styling: {},
   },
 });
 
-export { SkeletonContext as Context };
+export default context;

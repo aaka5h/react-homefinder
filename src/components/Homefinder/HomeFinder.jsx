@@ -127,7 +127,7 @@ class HomeFinder extends Component {
   };
 
   render() {
-    const { searching, loadingMore, homes } = this.props;
+    const { searching, loading, homes } = this.props;
     const { form } = this.state;
     return (
       <>
@@ -136,7 +136,6 @@ class HomeFinder extends Component {
           listRef={this.listRef}
           loadMore={this.loadMore}
           searching={searching}
-          loading={loadingMore}
           homes={homes}
           scrolled={this.scrollFinished}
         />
