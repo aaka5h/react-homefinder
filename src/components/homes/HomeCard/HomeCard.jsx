@@ -12,24 +12,32 @@ const formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 0,
 });
 
+const handlers = {
+  address: value => <div>{value}</div>,
+};
+
 const homeCard = (props) => {
-  const cardClasses = [classes.home, props.className];
+  const cardClasses = [classes.home];
+  // will also remove explictly added classes
+  if (!props.id && props.skeleton) cardClasses.push(classes['pending-data']);
 
   return (
     <div className={cardClasses.join(' ')}>
       <HomeImage src={props.image} alt={props.name} />
-      <div>{formatter.format(props.price)}</div>
-      <div>
-        {`${props.name}:${props.id}`}
+      <div className={classes['home-details']}>
+        <div className={classes['detail-item']}>{!!props.price && formatter.format(props.price)}</div>
+        <div className={classes['detail-item']}>
+          {`${!!props.name && props.name}:${!!props.id && props.id}`}
+        </div>
+        <div className={classes['detail-item']}>
+          {props.address}
+        </div>
+        <HomeSpecification bath={props.bathRooms} className={classes['detail-item']} bed={props.bedRooms} />
+        <Link to={`/home/${props.id}`} className={[classes['detail-button'], classes['detail-item']].join(' ')}>
+          <button type="button">Detail</button>
+        </Link>
       </div>
-      <div>
-        {props.address}
-      </div>
-      <HomeSpecification bath={props.bathRooms} bed={props.bedRooms} />
-      <Link to={`/home/${props.id}`} className={classes['detail-button']}>
-        <button type="button">Detail</button>
-      </Link>
     </div>
   );
 };
-export default createSkeletonElement(homeCard, 'loading-home');
+export default createSkeletonElement(homeCard, classes['pending-data']);

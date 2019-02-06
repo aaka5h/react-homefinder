@@ -13,10 +13,10 @@ const axios = Axios.create({
 });
 
 axios.interceptors.response.use((response) => {
-    console.log('response:', response);
-    return response;
-  },
-  error => Promise.reject(error));
+  console.log('response:', response);
+  return response;
+},
+error => Promise.reject(error));
 
 const loadMoreHomes = homes => ({
   type: LOAD_MORE_HOMES,
@@ -48,7 +48,7 @@ export const fetchMoreHomes = queryObject => (dispatch) => {
         homes.push(new HomeModel(home));
       });
       // dispatch(loadMoreHomes(homes));
-      setTimeout(() => dispatch(loadMoreHomes(homes)), 10000);
+      // setTimeout(() => dispatch(loadMoreHomes(homes)), 10000);
       return Promise.resolve({ data: 'hello world' });
     })
     .catch(error => Promise.reject(error));

@@ -7,7 +7,8 @@ const unwrapStyle = style => ((typeof style === 'function') ? style() : style ||
 const createClassName = classes => classes.filter(Boolean).join(' ');
 
 
-export const createSkeletonElement = (type, pendingStyle) => {
+export const createSkeletonElement = (type, pendingStyle
+) => {
   const ExportElement = (props) => {
     const consumerMethod = ({ skeletor }) => {
       console.log('context:', skeletor);
@@ -30,6 +31,7 @@ export const createSkeletonElement = (type, pendingStyle) => {
 
         newProps['aria-hidden'] = true;
         newProps.skeleton = true;
+        newProps.skeletonClass = '';
       }
       return React.createElement(type, newProps);
     };

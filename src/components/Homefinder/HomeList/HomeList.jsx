@@ -15,7 +15,7 @@ const homeList = (props) => {
   if (loading) {
     const placeHolder = new Array(10)
       .fill(1).map(i => Math.random().toFixed(5))
-      .map(value => <HomeCard key={value} />);
+      .map(value => <HomeCard className="loading-home" key={value} />);
     console.log('loading:', placeHolder);
     homesArr = homesArr.concat(placeHolder);
   }
@@ -31,4 +31,4 @@ const homeList = (props) => {
   );
 };
 
-export default createSkeletonElement(homeList, 'home-list');
+export default createSkeletonElement(homeList, classes['pending-home-list']);

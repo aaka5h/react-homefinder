@@ -28,3 +28,17 @@
 .home .detail-button button {
   width: 100%;
 }
+
+.home.pending-data{
+  background-color: #61dafb;
+}
+
+.home.pending-data .home-details{
+}
+
+.home.pending-data .home-details:before{
+  content:'Loading...';
+}
+
+.home.pending-data .detail-item{
+}
