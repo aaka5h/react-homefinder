@@ -64,7 +64,7 @@ class HomeFinder extends Component {
 
   componentDidMount() {
     this.props.loadFacets();
-    this.loadMore();
+    this.search();
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -87,8 +87,12 @@ class HomeFinder extends Component {
     this.setState({ form });
   }
 
-  search = (event) => {
+  searchClicked = (event) => {
     event.preventDefault();
+    this.search();
+  }
+
+  search = () => {
     const query = this.createQuery();
     // TODO: if(search Params changed)
     this.props.search(HomeFinderQueryFactory('api', query));
@@ -131,13 +135,14 @@ class HomeFinder extends Component {
     const { form } = this.state;
     return (
       <>
-        <SearchBox search={this.search} valueChanged={this.valueChanged} form={form} />
+        <SearchBox search={this.searchClicked} valueChanged={this.valueChanged} form={form} />
         <HomeList
           listRef={this.listRef}
           loadMore={this.loadMore}
           searching={searching}
           homes={homes}
           scrolled={this.scrollFinished}
+          totalResults={this.props.facetsLoaded ? this.props.resultSummary.totalResults : 0}
         />
       </>
     );
@@ -151,6 +156,7 @@ const mapStateToProps = state => ({
   loading: state.homeFinder.loadingMore,
   facets: new FacetsAdapter(state.homeFinder.facets),
   facetsLoaded: state.homeFinder.facetsLoaded,
+  resultSummary: state.homeFinder.resultSummary,
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -160,7 +166,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 
-const test = props => props.loading;
+const test = props => props.loading || props.searching;
 
 const skeleton = skeletonProvider(null, test, null)(HomeFinder);
 

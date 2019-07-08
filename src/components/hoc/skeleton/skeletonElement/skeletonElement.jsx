@@ -7,15 +7,13 @@ const unwrapStyle = style => ((typeof style === 'function') ? style() : style ||
 const createClassName = classes => classes.filter(Boolean).join(' ');
 
 
-export const createSkeletonElement = (type, pendingStyle
-) => {
+export const createSkeletonElement = (type, pendingStyle) => {
   const ExportElement = (props) => {
     const consumerMethod = ({ skeletor }) => {
-      console.log('context:', skeletor);
       const { isPending = false, styling = undefined } = skeletor || {};
       const [contextStyle, propStyle] = [styling, pendingStyle].map(unwrapStyle);
       const newProps = { ...props };
-      console.log(isPending);
+      // console.log(isPending);
       if (isPending) {
         /* newProps.style = [
            ...props.style,

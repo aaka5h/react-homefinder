@@ -5,7 +5,7 @@ import classes from './HomeList.module.css';
 import { createSkeletonElement } from '../../hoc/skeleton/skeletonElement/skeletonElement';
 
 const homeList = (props) => {
-  const { skeleton: loading, listRef: ref, loadMore } = props;
+  const { skeleton: loading, listRef: ref, loadMore, searching, totalResults } = props;
   let homesArr = [];
   for (const home of props.homes) {
     homesArr.push(<HomeCard key={home.id} {...home} />);
@@ -21,13 +21,14 @@ const homeList = (props) => {
   }
 
   return (
-    <>
+    <div className={classes['home-list-wrapper']}>
       <div ref={ref} className={classes['home-list']}>
         {homesArr}
       </div>
-      <button type="button" onClick={loadMore}>loadMore</button>
-      {loading ? <div>Loading</div> : null}
-    </>
+      {totalResults}
+      {!(searching || loading) && props.homes.length < totalResults ? <button type="button" onClick={loadMore}>loadMore</button> : null}
+      {searching ? <div className={classes['searching']}>Loading</div> : null}
+    </div>
   );
 };
 

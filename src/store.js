@@ -1,9 +1,10 @@
-import { applyMiddleware, createStore } from 'redux';
+import { applyMiddleware, createStore, compose} from 'redux';
 import thunk from 'redux-thunk';
 import homeFinder from './reducers/HomeFinder/index';
 
 console.log(homeFinder);
-const store = createStore(homeFinder, applyMiddleware(thunk));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(homeFinder, composeEnhancers(applyMiddleware(thunk)));
 
 console.log(store);
 export default store;

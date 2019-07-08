@@ -2,9 +2,10 @@ import Axios from 'axios';
 import HomeModel from '../../components/homes/home.model';
 
 import {
-  LOAD_MORE_HOMES, LOADING_MORE_HOMES, REFRESH_SEARCH, UPDATE_FACETS,
+  LOAD_MORE_HOMES, LOADING_MORE_HOMES, REFRESH_SEARCH, REFRESHING_SEARCH, UPDATE_FACETS,
 } from './action-names';
 import { convertToQuery } from '../../utils/requests/axios.get';
+import ResultSummary from '../../components/Homefinder/SearchBox/result-summary.model';
 
 const PARTNER_ID = process.env.REACT_APP_PARTNER_ID;
 
@@ -23,14 +24,19 @@ const loadMoreHomes = homes => ({
   homes,
 });
 
-export const updateFacets = facets => ({
+export const updateFacets = (facets, resultSummary) => ({
   type: UPDATE_FACETS,
   facets,
+  resultSummary,
 });
 
 
 const loadingMoreHomes = () => ({
   type: LOADING_MORE_HOMES,
+});
+
+const refreshingSearch = () => ({
+  type: REFRESHING_SEARCH,
 });
 
 export const fetchMoreHomes = queryObject => (dispatch) => {
@@ -48,8 +54,8 @@ export const fetchMoreHomes = queryObject => (dispatch) => {
         homes.push(new HomeModel(home));
       });
       // dispatch(loadMoreHomes(homes));
-      // setTimeout(() => dispatch(loadMoreHomes(homes)), 10000);
-      return Promise.resolve({ data: 'hello world' });
+      setTimeout(() => dispatch(loadMoreHomes(homes)), 1000);
+      return Promise.resolve(null);
     })
     .catch(error => Promise.reject(error));
 };
@@ -60,6 +66,7 @@ const refreshSearch = homes => ({
 });
 
 export const searchHomes = query => (dispatch) => {
+  dispatch(refreshingSearch());
   axios.get(
     `/search/homes?${convertToQuery({
       ...query,
@@ -72,7 +79,10 @@ export const searchHomes = query => (dispatch) => {
       response.data.Result.forEach((home) => {
         homes.push(new HomeModel(home));
       });
-      dispatch(refreshSearch(homes));
+      setTimeout(_ => {
+
+        dispatch(refreshSearch(homes));
+      }, 2000);
     })
     .catch(error => Promise.reject(error));
 };
@@ -87,7 +97,9 @@ export const loadFacets = () => (dispatch) => {
     .then((response) => {
       // TODO: cache facets or do sometig else
       const facets = response.data.ResultCounts.Facets;
-      dispatch(updateFacets(facets));
+      const resultSummary = new ResultSummary(response.data.ResultCounts);
+      dispatch(updateFacets(facets, resultSummary));
+      return Promise.resolve(null);
     })
     .catch(error => Promise.reject(error));
 };

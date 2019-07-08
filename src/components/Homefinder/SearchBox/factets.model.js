@@ -1,6 +1,8 @@
 import Model from '../../../utils/models/Model';
 
 export default class FacetsModel extends Model {
+  totalResults;
+
   constructor(data) {
     super();
     this.setPrice(data.PrRange);
@@ -21,6 +23,6 @@ export default class FacetsModel extends Model {
 
   setBedrooms(beds) {
     const res = this.splitRange(beds);
-    ([this.bedroomMin, this.bedroomMax] = res);
+    ([this.bedroomMin, this.bedroomMax] = res)
   }
 }

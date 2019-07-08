@@ -3,6 +3,10 @@ export default class FacetAdapter {
     this.model = facets;
   }
 
+  get facetModel() {
+    return this.model;
+  }
+
   buildRange(low, high, step) {
     const arr = [];
     for (let i = low; i <= (high + step); i += step) {

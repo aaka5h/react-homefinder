@@ -2,7 +2,7 @@ import {
   LOAD_MORE_HOMES,
   REFRESH_SEARCH,
   UPDATE_FACETS,
-  LOADING_MORE_HOMES,
+  LOADING_MORE_HOMES, REFRESHING_SEARCH,
 } from '../../actions/HomeFinder/index';
 import FacetsModel from '../../components/Homefinder/SearchBox/factets.model';
 
@@ -18,8 +18,12 @@ const defaultState = {
     maxPrice: 0,
     beds: 0,
     baths: 0,
+    totalResult: 0,
   },
   facetsLoaded: false,
+  resultSummary: {
+    totalResults: 0,
+  },
 };
 
 const updateFacetsState = (state, action) => {
@@ -30,15 +34,23 @@ const updateFacetsState = (state, action) => {
     ...state,
     facets: f,
     facetsLoaded: true,
+    resultSummary: action.resultSummary,
   };
 };
 
 const homeFinderReducer = (state = defaultState, action) => {
   switch (action.type) {
+    case REFRESHING_SEARCH:
+      return {
+        ...state,
+        searching: true,
+      };
     case REFRESH_SEARCH:
       return {
         ...state,
         homes: action.homes,
+        searching: false,
+        pagesLoaded: 1,
       };
     case LOAD_MORE_HOMES:
       const oldHomes = [...state.homes];
@@ -47,7 +59,7 @@ const homeFinderReducer = (state = defaultState, action) => {
         ...state,
         pagesLoaded: state.pagesLoaded + 1,
         loadingMore: false,
-        homes: homes,
+        homes,
       };
     case UPDATE_FACETS:
       return updateFacetsState(state, action);

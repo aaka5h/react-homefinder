@@ -29,8 +29,31 @@
   width: 100%;
 }
 
-.home.pending-data{
-  background-color: #61dafb;
+.home.pending-data:before{
+  content: '';
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  background-color: #fafafa;
+}
+
+.home.pending-data:after{
+  content: '';
+  position: absolute;
+  z-index: 11;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 110px;
+  background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%),
+  linear-gradient(#ddd 10px, transparent 0), linear-gradient(#ddd 10px, transparent 0),
+  linear-gradient(#ddd 10px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 50px 100px, 160px 10px, 130px 10px, 80% 10px;
+  background-position: 0 90%, 20px 40px, 20px 60px, 20px 80px;
+  -webkit-animation: shine 1s infinite;
+  animation: shine 1s infinite;
 }
 
 .home.pending-data .home-details{
