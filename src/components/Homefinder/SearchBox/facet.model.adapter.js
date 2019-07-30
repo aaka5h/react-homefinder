@@ -53,13 +53,13 @@ export default class FacetAdapter {
   buildBathroomOptions() {
     return this.constructor.buildOption(
       this.constructor.buildRange(this._model.bathroomMin, this._model.bathroomMax, 1),
-    );
+    ).map(el => ({ ...el, label: `${el.label}+` }));
   }
 
   buildBedroomOptions() {
     return this.constructor.buildOption(
       this.constructor.buildRange(this._model.bedroomMin, this._model.bedroomMax, 1),
-    );
+    ).map(el => ({ ...el, label: `${el.label}+` }));
   }
 
 }

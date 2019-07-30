@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04cecc68-3229-4158-b83e-809153fe7789" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/actions/HomeFinder/action-names.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_actions/HomeFinder/action-names.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/HomeFinder/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_actions/HomeFinder/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/HomeFinder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_actions/HomeFinder/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/HomeFinder/homeFinderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_reducers/HomeFinder/homeFinderReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/HomeFinder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_reducers/HomeFinder/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Homefinder/SearchBox/facet.model.adapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homefinder/SearchBox/facet.model.adapter.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,22 +19,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="160" column="28" lean-forward="true" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
+            <state relative-caret-position="137">
+              <caret line="72" column="52" lean-forward="true" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Homefinder/SearchBox/SearchBox.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/_reducers/HomeFinder/homeFinderReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-637">
-              <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+            <state relative-caret-position="162">
+              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
               <folding>
                 <element signature="e#0#145#0" expanded="true" />
               </folding>
@@ -111,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Homefinder/SearchBox/facet.model.adapter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="587">
+              <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -233,8 +216,8 @@
         <option value="$PROJECT_DIR$/src/components/Homefinder/HomeList/HomeList.module.css" />
         <option value="$PROJECT_DIR$/src/actions/HomeFinder/actions.js" />
         <option value="$PROJECT_DIR$/src/components/Homefinder/SearchBox/factets.model.js" />
-        <option value="$PROJECT_DIR$/src/components/Homefinder/SearchBox/facet.model.adapter.js" />
         <option value="$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx" />
+        <option value="$PROJECT_DIR$/src/components/Homefinder/SearchBox/facet.model.adapter.js" />
       </list>
     </option>
   </component>
@@ -351,18 +334,18 @@
       <workItem from="1549446035288" duration="49000" />
       <workItem from="1549446098709" duration="29000" />
       <workItem from="1562303272176" duration="21795000" />
-      <workItem from="1564371936022" duration="23928000" />
+      <workItem from="1564371936022" duration="24563000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178520000" />
+    <option name="totallyTimeSpent" value="179155000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-330" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.1601686" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.1601686" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.1601686" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -729,50 +712,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Homefinder/SearchBox/SearchBox.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Homefinder/HomeList/HomeList.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Homefinder/SearchBox/factets.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="648">
           <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Homefinder/SearchBox/facet.model.adapter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="160" column="28" lean-forward="true" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -788,10 +731,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/_reducers/HomeFinder/homeFinderReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-637">
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+        <state relative-caret-position="162">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
             <element signature="e#0#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Homefinder/HomeList/HomeList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Homefinder/SearchBox/SearchBox.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="72" column="52" lean-forward="true" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Homefinder/SearchBox/facet.model.adapter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="55" column="54" selection-start-line="55" selection-start-column="54" selection-end-line="55" selection-end-column="54" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>

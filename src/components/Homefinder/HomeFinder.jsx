@@ -86,7 +86,7 @@ class HomeFinder extends Component {
   searchClicked = (event) => {
     event.preventDefault();
     this.search();
-  }
+  };
 
   search = () => {
     const query = this.createQuery();
