@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import SearchBox from './SearchBox/SearchBox';
 import HomeList from './HomeList/HomeList';
-import { fetchMoreHomes, searchHomes, loadFacets } from '../../actions/HomeFinder/index';
+import { fetchMoreHomes, searchHomes, loadFacets } from '../../_actions/HomeFinder/index';
 import FacetsAdapter from './SearchBox/facet.model.adapter';
 import HomeFinderQueryFactory from './HomeFinderQuery.factory';
 import Query from './Query.model';
@@ -104,7 +104,7 @@ class HomeFinder extends Component {
   };
 
   valueChanged = (event, inputName) => {
-    const value = event.target.value;
+    const { value } = event.target;
     console.log(value, event, inputName);
 
     const { form } = this.state;

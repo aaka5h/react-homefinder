@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04cecc68-3229-4158-b83e-809153fe7789" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/HomeFinder/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/HomeFinder/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/HomeFinder/action-names.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_actions/HomeFinder/action-names.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/HomeFinder/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_actions/HomeFinder/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/HomeFinder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_actions/HomeFinder/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Homefinder/HomeFinderQuery.factory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homefinder/HomeFinderQuery.factory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Homefinder/HomeList/HomeList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homefinder/HomeList/HomeList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Homefinder/HomeList/HomeList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homefinder/HomeList/HomeList.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Homefinder/Query.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homefinder/Query.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Homefinder/SearchBox/facet.model.adapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homefinder/SearchBox/facet.model.adapter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Homefinder/SearchBox/factets.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Homefinder/SearchBox/factets.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/HomeFinder/homeFinderReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_reducers/HomeFinder/homeFinderReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/HomeFinder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/_reducers/HomeFinder/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+            <state relative-caret-position="587">
+              <caret line="160" column="28" lean-forward="true" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -43,15 +41,6 @@
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Homefinder/Query.model.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -82,6 +71,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
               <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/_reducers/HomeFinder/homeFinderReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-637">
+              <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#145#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,10 +124,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/actions/HomeFinder/actions.js">
+        <entry file="file://$PROJECT_DIR$/src/_actions/HomeFinder/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="83" column="39" lean-forward="true" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
+            <state relative-caret-position="309">
+              <caret line="63" column="23" lean-forward="true" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -264,62 +265,13 @@
               <item name="reactjs-nhs" type="b2602c69:ProjectViewProjectNode" />
               <item name="reactjs-nhs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
+              <item name="_reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="reactjs-nhs" type="b2602c69:ProjectViewProjectNode" />
               <item name="reactjs-nhs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="actions" type="462c0819:PsiDirectoryNode" />
-              <item name="HomeFinder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactjs-nhs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactjs-nhs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactjs-nhs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactjs-nhs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Homefinder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactjs-nhs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactjs-nhs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Homefinder" type="462c0819:PsiDirectoryNode" />
-              <item name="HomeList" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactjs-nhs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactjs-nhs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactjs-nhs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactjs-nhs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homes" type="462c0819:PsiDirectoryNode" />
-              <item name="HomeCard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactjs-nhs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactjs-nhs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="reactjs-nhs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="reactjs-nhs" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="_reducers" type="462c0819:PsiDirectoryNode" />
               <item name="HomeFinder" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -399,18 +351,18 @@
       <workItem from="1549446035288" duration="49000" />
       <workItem from="1549446098709" duration="29000" />
       <workItem from="1562303272176" duration="21795000" />
-      <workItem from="1564371936022" duration="23540000" />
+      <workItem from="1564371936022" duration="23928000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178132000" />
+    <option name="totallyTimeSpent" value="178520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-330" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.1601686" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.1601686" />
       <window_info id="Structure" order="1" sideWeight="0.5005417" side_tool="true" weight="0.1601686" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -424,7 +376,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3629469" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3943662" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.38136512" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -590,7 +542,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/HomeFinder/index.js">
+    <entry file="file://$PROJECT_DIR$/src/_actions/HomeFinder/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
@@ -635,7 +587,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/HomeFinder/index.js">
+    <entry file="file://$PROJECT_DIR$/src/_reducers/HomeFinder/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
@@ -675,7 +627,7 @@
     <entry file="file://$PROJECT_DIR$/.env.example">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/HomeFinder/action-names.js">
+    <entry file="file://$PROJECT_DIR$/src/_actions/HomeFinder/action-names.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
@@ -743,16 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/HomeFinder/homeFinderReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#144#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Homefinder/Query.model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -797,16 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/HomeFinder/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="83" column="39" lean-forward="true" selection-start-line="83" selection-start-column="39" selection-end-line="83" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Homefinder/HomeList/HomeList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -836,10 +768,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Homefinder/HomeFinder.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+        <state relative-caret-position="587">
+          <caret line="160" column="28" lean-forward="true" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_actions/HomeFinder/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="63" column="23" lean-forward="true" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/_reducers/HomeFinder/homeFinderReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-637">
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#145#0" expanded="true" />
           </folding>
         </state>
       </provider>

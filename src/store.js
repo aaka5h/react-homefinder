@@ -1,6 +1,6 @@
 import { applyMiddleware, createStore, compose} from 'redux';
 import thunk from 'redux-thunk';
-import homeFinder from './reducers/HomeFinder/index';
+import homeFinder from './_reducers/HomeFinder/index';
 
 console.log(homeFinder);
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

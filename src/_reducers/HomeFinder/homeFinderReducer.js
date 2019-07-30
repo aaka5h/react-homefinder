@@ -3,7 +3,7 @@ import {
   REFRESH_SEARCH,
   UPDATE_FACETS,
   LOADING_MORE_HOMES, REFRESHING_SEARCH,
-} from '../../actions/HomeFinder/index';
+} from '../../_actions/HomeFinder/index';
 import FacetsModel from '../../components/Homefinder/SearchBox/factets.model';
 
 
