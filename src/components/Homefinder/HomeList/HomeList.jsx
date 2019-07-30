@@ -5,14 +5,16 @@ import classes from './HomeList.module.css';
 import { createSkeletonElement } from '../../hoc/skeleton/skeletonElement/skeletonElement';
 
 const homeList = (props) => {
-  const { skeleton: loading, listRef: ref, loadMore, searching, totalResults } = props;
+  const {
+    skeleton: loading, listRef: ref, loadMore, searching, totalResults,
+  } = props;
   let homesArr = [];
   for (const home of props.homes) {
     homesArr.push(<HomeCard key={home.id} {...home} />);
   }
 
   console.log({ loading });
-  if (loading) {
+  if (loading && !searching) {
     const placeHolder = new Array(10)
       .fill(1).map(i => Math.random().toFixed(5))
       .map(value => <HomeCard className="loading-home" key={value} />);
@@ -26,8 +28,10 @@ const homeList = (props) => {
         {homesArr}
       </div>
       {totalResults}
-      {!(searching || loading) && props.homes.length < totalResults ? <button type="button" onClick={loadMore}>loadMore</button> : null}
-      {searching ? <div className={classes['searching']}>Loading</div> : null}
+      {!(searching || loading) && props.homes.length < totalResults
+        ? <button type="button" onClick={loadMore}>loadMore</button>
+        : null}
+      {searching ? <div className={classes.searching}>Loading</div> : null}
     </div>
   );
 };

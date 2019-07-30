@@ -63,6 +63,7 @@ class HomeFinder extends Component {
   }
 
   componentDidMount() {
+    console.log('[DidMount] HomeFinder');
     this.props.loadFacets();
     this.search();
   }
@@ -125,7 +126,7 @@ class HomeFinder extends Component {
   loadMore = () => {
     const query = this.createQuery();
     query.page = this.props.page + 1;
-    this.props.loadHomes(query).then((data) => {
+    this.props.loadHomes(HomeFinderQueryFactory('api', query)).then((data) => {
       console.log('action finished:', data);
     });
   };

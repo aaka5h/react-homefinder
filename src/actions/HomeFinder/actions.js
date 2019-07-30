@@ -60,9 +60,10 @@ export const fetchMoreHomes = queryObject => (dispatch) => {
     .catch(error => Promise.reject(error));
 };
 
-const refreshSearch = homes => ({
+const refreshSearch = ({ homes, resultSummary }) => ({
   type: REFRESH_SEARCH,
   homes,
+  resultSummary,
 });
 
 export const searchHomes = query => (dispatch) => {
@@ -79,9 +80,9 @@ export const searchHomes = query => (dispatch) => {
       response.data.Result.forEach((home) => {
         homes.push(new HomeModel(home));
       });
-      setTimeout(_ => {
-
-        dispatch(refreshSearch(homes));
+      const resultSummary = new ResultSummary(response.data.ResultCounts);
+      setTimeout(() => {
+        dispatch(refreshSearch({homes, resultSummary}));
       }, 2000);
     })
     .catch(error => Promise.reject(error));

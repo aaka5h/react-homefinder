@@ -51,6 +51,7 @@ const homeFinderReducer = (state = defaultState, action) => {
         homes: action.homes,
         searching: false,
         pagesLoaded: 1,
+        resultSummary: action.resultSummary,
       };
     case LOAD_MORE_HOMES:
       const oldHomes = [...state.homes];
