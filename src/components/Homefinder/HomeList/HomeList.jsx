@@ -27,9 +27,8 @@ const homeList = (props) => {
       <div ref={ref} className={classes['home-list']}>
         {homesArr}
       </div>
-      {totalResults}
-      {!(searching || loading) && props.homes.length < totalResults
-        ? <button type="button" onClick={loadMore}>loadMore</button>
+      {!loading && props.homes.length < totalResults
+        ? <button type="button" onClick={loadMore} className={classes['load-more-button']}>Load More</button>
         : null}
       {searching ? <div className={classes.searching}>Loading</div> : null}
     </div>

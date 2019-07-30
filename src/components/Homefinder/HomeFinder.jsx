@@ -46,14 +46,6 @@ class HomeFinder extends Component {
         valid: false,
         config: { options: [{ value: '', label: 'Select' }] },
       },
-      stories: {
-        label: 'Stories',
-        type: 'select',
-        touched: false,
-        value: null,
-        valid: false,
-        config: { options: [{ value: '', label: 'Select' }] },
-      },
     },
   };
 
@@ -77,14 +69,17 @@ class HomeFinder extends Component {
   }
 
   setFormOptions() {
-    if (this.loadedOnce) return;
     const searchBoxAdapter = this.props.facets;
     const PriceOptions = searchBoxAdapter.buildPriceOptions();
+    const BathroomOptions = searchBoxAdapter.buildBathroomOptions();
 
     const { form } = this.state;
     const newOpts = form.minPrice.config.options.concat(PriceOptions);
     form.minPrice.config.options = newOpts;
     form.maxPrice.config.options = newOpts;
+    form.bathrooms.config.options = form.bathrooms.config.options.concat(BathroomOptions);
+    form.bedrooms.config.options =
+      form.bedrooms.config.options.concat(searchBoxAdapter.buildBedroomOptions());
     this.setState({ form });
   }
 
@@ -103,7 +98,7 @@ class HomeFinder extends Component {
     const query = new Query();
     const { form } = this.state;
     Object.keys(form).forEach((key) => {
-      query[key] = form[key].value;
+      query[key] = form[key].value || null;
     });
     return query;
   };
@@ -120,7 +115,6 @@ class HomeFinder extends Component {
   };
 
   scrollFinished = () => {
-
   };
 
   loadMore = () => {
@@ -134,16 +128,18 @@ class HomeFinder extends Component {
   render() {
     const { searching, loading, homes } = this.props;
     const { form } = this.state;
+    const totalResults = this.props.facetsLoaded ? this.props.resultSummary.totalResults : 0;
     return (
       <>
         <SearchBox search={this.searchClicked} valueChanged={this.valueChanged} form={form} />
+        {!loading ? `${totalResults} Homes found.` : null}
         <HomeList
           listRef={this.listRef}
           loadMore={this.loadMore}
           searching={searching}
           homes={homes}
           scrolled={this.scrollFinished}
-          totalResults={this.props.facetsLoaded ? this.props.resultSummary.totalResults : 0}
+          totalResults={totalResults}
         />
       </>
     );

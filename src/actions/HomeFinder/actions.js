@@ -81,9 +81,7 @@ export const searchHomes = query => (dispatch) => {
         homes.push(new HomeModel(home));
       });
       const resultSummary = new ResultSummary(response.data.ResultCounts);
-      setTimeout(() => {
-        dispatch(refreshSearch({homes, resultSummary}));
-      }, 2000);
+      dispatch(refreshSearch({ homes, resultSummary }));
     })
     .catch(error => Promise.reject(error));
 };

@@ -3,11 +3,19 @@ import Model from '../../../utils/models/Model';
 export default class FacetsModel extends Model {
   totalResults;
 
+  bathroomMin;
+
+  bathroomMax;
+
+  bedroomMin;
+
+  bedroomMax;
+
   constructor(data) {
     super();
     this.setPrice(data.PrRange);
-    this.setBathrooms(data.BrRange);
-    this.setBedrooms(data.BaRange);
+    this.setBathrooms(data.BaRange);
+    this.setBedrooms(data.BrRange);
     console.log('facet model:', this);
   }
 
@@ -23,6 +31,6 @@ export default class FacetsModel extends Model {
 
   setBedrooms(beds) {
     const res = this.splitRange(beds);
-    ([this.bedroomMin, this.bedroomMax] = res)
+    ([this.bedroomMin, this.bedroomMax] = res);
   }
 }

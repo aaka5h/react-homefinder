@@ -11,7 +11,7 @@ export default class Query {
 
   page;
 
-  sort = 'random';
+  sort;
 
   constructor({ minPrice = 0, maxPrice = 0 } = {}) {
     this.minPrice = minPrice;
