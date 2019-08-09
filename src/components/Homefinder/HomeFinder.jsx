@@ -132,7 +132,7 @@ class HomeFinder extends Component {
     return (
       <>
         <SearchBox search={this.searchClicked} valueChanged={this.valueChanged} form={form} />
-        {!loading ? `${totalResults} Homes found.` : null}
+        {!searching ? `${totalResults} Homes found.` : null}
         <HomeList
           listRef={this.listRef}
           loadMore={this.loadMore}
