@@ -7,7 +7,7 @@ const unwrapStyle = style => ((typeof style === 'function') ? style() : style ||
 const createClassName = classes => classes.filter(Boolean).join(' ');
 
 
-export const createSkeletonElement = (type, pendingStyle) => {
+const createSkeletonElement = (type, pendingStyle) => {
   const ExportElement = (props) => {
     const consumerMethod = ({ skeletor }) => {
       const { isPending = false, styling = undefined } = skeletor || {};
@@ -44,3 +44,5 @@ export const createSkeletonElement = (type, pendingStyle) => {
 
   return ExportElement;
 };
+
+export default createSkeletonElement;
